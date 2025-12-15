@@ -41,13 +41,13 @@ def main() -> None:
 
     src_path = args.srcpath
     output_path = args.outpath
-    static_path = Path(src_path) / "assets"
+    static_path = "assets"
 
     site = Site.make_site(
         searchpath=src_path,
         outpath=output_path,
         staticpaths=[
-            str(static_path),
+            static_path,
         ],
         contexts=[(".*.html", get_context)],
     )
